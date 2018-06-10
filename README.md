@@ -3,9 +3,9 @@ This is a jquery-ui duckpunch of the selectable widget to allow selecting a sequ
 
 
 ```javascript
-	$('#selectable').selectable({
-		filter: 'td',
-		tolerance: 'sequential',
-		stop: assign_dates.bind( self )
+$('#selectable').selectable({
+	filter: 'td',
+	tolerance: 'sequential',
+	stop: assign_dates.bind( self )
 });
 ```
