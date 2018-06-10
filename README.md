@@ -1,6 +1,7 @@
 # sequential-selectable
 This is a jquery-ui duckpunch of the selectable widget to allow selecting a sequence of records when split over multiple rows, as one might want from a calendar.  It works exactly like the normal selectable, but with a different tolerance, "sequential"
 
+[Demo](https://cmcnulty.github.io/sequential-selectable/)
 
 ```javascript
 $('#selectable').selectable({
