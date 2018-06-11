@@ -1,11 +1,5 @@
 define( [ 'jquery', 'jquery.ui' ], function( $ ) {
 
-	$.ui.selectable.prototype._old_mouseStart = $.ui.selectable.prototype._mouseStart;
-	$.ui.selectable.prototype._mouseStart = function( e ) {
-		this.firstHit = false;
-		return this._old_mouseStart( e );
-	};
-
 	$.ui.selectable.prototype._old_mouseDrag = $.ui.selectable.prototype._mouseDrag;
 	$.ui.selectable.prototype._mouseDrag = function( e ) {
 		if (this.options.tolerance == 'sequential') {
@@ -35,6 +29,10 @@ define( [ 'jquery', 'jquery.ui' ], function( $ ) {
 		if (y1 > y2) { tmp = y2; y2 = y1; y1 = tmp; }
 		this.helper.css({left: x1, top: y1, width: x2-x1, height: y2-y1});
 
+		if( that.firstHit == null ) {
+			that.firstHit = {};
+		}
+		
 		this.selectees.each(function() {
 			var selectee = $.data(this, "selectable-item"),
 				hit = false,
